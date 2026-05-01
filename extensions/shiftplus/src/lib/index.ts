@@ -5,7 +5,7 @@ import { exec } from "child_process";
 
 export const INDEX_PATH = path.join(
   os.homedir(),
-  "Library/Application Support/BrowserProfileManager/raycast-index.json",
+  "Library/Application Support/ShiftPlus/raycast-index.json",
 );
 
 export interface QuickLinkEntry {
