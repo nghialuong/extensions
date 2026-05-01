@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
-import { exec } from "child_process";
+import { open } from "@raycast/api";
 
 export const INDEX_PATH = path.join(
   os.homedir(),
@@ -63,9 +63,7 @@ export function watchIndex(callback: () => void): fs.FSWatcher | null {
 }
 
 export async function triggerExport(): Promise<void> {
-  return new Promise((resolve) => {
-    exec('open "shiftplus://export-index"', () => resolve());
-  });
+  await open("shiftplus://export-index");
 }
 
 export function domainFromURL(rawURL: string): string {
